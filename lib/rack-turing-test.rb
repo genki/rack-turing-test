@@ -2,7 +2,7 @@ require "rack-turing-test/version"
 
 module Rack
   module TuringTest
-    PATTERN = Regexp.union( 
+    PATTERN = Regexp.union(*[
       /googlebot/i,
       /mediapartners-google/i,
       /slurp/i,
@@ -14,7 +14,7 @@ module Rack
       /baidu/i,
       /yetibot/i,
       /teoma/i,
-    ).freeze
+    ]).freeze
 
     def bot?
       !!user_agent.match(PATTERN)
