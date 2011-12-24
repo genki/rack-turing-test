@@ -5,11 +5,11 @@ require "rack-turing-test/version"
 Gem::Specification.new do |s|
   s.name        = "rack-turing-test"
   s.version     = Rack::Turing::Test::VERSION
-  s.authors     = ["TODO: Write your name"]
+  s.authors     = ["Genki Takiuchi"]
   s.email       = ["genki@s21g.com"]
   s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.summary     = %q{Bot detector for Rack::Request}
+  s.description = %q{You can test if sender of request has intelligence.}
 
   s.rubyforge_project = "rack-turing-test"
 
