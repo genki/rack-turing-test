@@ -1,7 +1,5 @@
 module Rack
-  module Turing
-    module Test
-      VERSION = "0.0.1"
-    end
+  module TuringTest
+    VERSION = "0.1.0"
   end
 end

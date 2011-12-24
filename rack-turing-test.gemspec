@@ -4,7 +4,7 @@ require "rack-turing-test/version"
 
 Gem::Specification.new do |s|
   s.name        = "rack-turing-test"
-  s.version     = Rack::Turing::Test::VERSION
+  s.version     = Rack::TuringTest::VERSION
   s.authors     = ["Genki Takiuchi"]
   s.email       = ["genki@s21g.com"]
   s.homepage    = ""
