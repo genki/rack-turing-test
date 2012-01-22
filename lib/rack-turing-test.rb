@@ -16,8 +16,11 @@ module Rack
       /teoma/i,
     ]).freeze
 
+    # Returns true if the request came from bot.
+    # Sometimes, there's a case that the HTTP_USERAGENT is nil.
+    # It's very rare for ordinary browsers. So, simply we observe it as a bot.
     def bot?
-      !!user_agent.match(PATTERN)
+      user_agent.nil? || !!user_agent.match(PATTERN)
     end
   end
 
