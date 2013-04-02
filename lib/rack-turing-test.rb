@@ -14,6 +14,7 @@ module Rack
       /baidu/i,
       /yetibot/i,
       /teoma/i,
+      /spider/i,
     ]).freeze
 
     # Returns true if the request came from bot.
