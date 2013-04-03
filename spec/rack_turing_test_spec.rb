@@ -25,4 +25,16 @@ describe Rack::TuringTest do
     req = TestRequest.new nil
     req.should be_bot
   end
+
+  it "can detect googlebot (no ajax)" do
+    ua = "Mediapartners-Google"
+    req = TestRequest.new ua
+    req.should be_bot
+  end
+
+  it "can detect googlebot (ajax)" do
+    req = TestRequest.new \
+      "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+    req.should be_bot
+  end
 end
