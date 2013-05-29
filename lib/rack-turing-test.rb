@@ -1,4 +1,4 @@
-require "rack-turing-test/version"
+require 'rack-turing-test/version'
 
 module Rack
   module TuringTest
@@ -21,7 +21,7 @@ module Rack
     # Sometimes, there's a case that the HTTP_USERAGENT is nil.
     # It's very rare for ordinary browsers. So, simply we observe it as a bot.
     def bot?
-      user_agent.nil? || !!user_agent.match(PATTERN)
+      @__bot ||= (user_agent.nil? || !!user_agent.match(PATTERN))
     end
   end
 
