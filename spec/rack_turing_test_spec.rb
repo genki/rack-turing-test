@@ -26,10 +26,16 @@ describe Rack::TuringTest do
     req.should be_bot
   end
 
+  it "don't detect requests that the ua is nil as bot affirmatively" do
+    req = TestRequest.new nil
+    req.bot!.should be_false
+  end
+
   it "can detect googlebot (no ajax)" do
     ua = "Mediapartners-Google"
     req = TestRequest.new ua
     req.should be_bot
+    req.bot!.should be_true
   end
 
   it "can detect googlebot (ajax)" do

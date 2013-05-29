@@ -21,7 +21,17 @@ module Rack
     # Sometimes, there's a case that the HTTP_USERAGENT is nil.
     # It's very rare for ordinary browsers. So, simply we observe it as a bot.
     def bot?
-      @__bot ||= (user_agent.nil? || !!user_agent.match(PATTERN))
+      result = user_agent.nil? || bot!
+    ensure
+      define_singleton_method(:bot?){result}
+    end
+
+    # Affirmative detection.
+    # Returns false if the user agent is nil.
+    def bot!
+      result = PATTERN === user_agent
+    ensure
+      define_singleton_method(:bot!){result}
     end
   end
 
